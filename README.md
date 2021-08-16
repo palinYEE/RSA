@@ -5,4 +5,26 @@
 
 # TODO LIST
 
-- big number 구현
+- Addition
+
+- Subtraction
+
+- Multiplication
+  - Textbook Algorithm
+  - Squaring
+  - Karatsuba Algorithm
+  - Toom-Cook Algorithm
+  - Schonhage-Strassen Algorithm
+
+- Division
+  - Binary Long Division Algorithm
+  - 2**w Long Division Algorithm
+
+- Modular Exponentiation
+  - Left-to-Right Algorithm
+  - Right-to-Left Algorithm
+
+
+- Fast Reduction
+  - Darret Reduction Algorithm
+  - Mongomery Reduction Algorithm 
