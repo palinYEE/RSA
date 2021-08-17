@@ -7,8 +7,11 @@ int main(){
     printf("=================\n");
     printf("[*] RSA Algorithm\n");
     printf("=================\n");
+    printf("[*] Global Setting value\n");
+    printf(" - BIT_SIZE %d\n", BIT_SIZE);
+    printf("=================\n");
     printf("1. Basic RSA Code\n");
-
+    printf("2. add Operation");
     printf("\n");
     printf("choice number : ");
     scanf("%d", &choice);

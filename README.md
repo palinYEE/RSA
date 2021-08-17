@@ -28,3 +28,6 @@
 - Fast Reduction
   - Darret Reduction Algorithm
   - Mongomery Reduction Algorithm 
+
+# 주의
+- 모든 연산은 리틀 엔디안이다.
