@@ -3,9 +3,12 @@
 - `Basic_RSA()` : 구현 완료
   - 가장 기초적인 RSA를 구현
 
+- Operation 구현
+  - Bit Addition : n-bi에 대해서 구현 완료
+
 # TODO LIST
 
-- Addition
+- ~~Addition~~
 
 - Subtraction
 
@@ -30,4 +33,5 @@
   - Mongomery Reduction Algorithm 
 
 # 주의
-- 모든 연산은 리틀 엔디안이다.
+
+- 모든 연산은 빅엔디안으로 표기한다.

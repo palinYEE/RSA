@@ -4,7 +4,6 @@
 #define BIT_SIZE 1024
 
 
-
 void Basic_RSA();
 
 #endif
