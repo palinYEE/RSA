@@ -10,7 +10,6 @@
 # TODO LIST
 
 - ~~Addition~~
-
 - ~~Subtraction~~
 
 - Multiplication
