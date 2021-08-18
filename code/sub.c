@@ -12,4 +12,21 @@ output : n-bit C (c_n | c_{n-1} ... | c_1 | c_0)
     5. endfor
     6. return c_{n-1} | ... | c_0
 */
-void naiveSub(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum);
+void naiveSub(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum){
+    int i, j;
+    int borrow = 0;
+    unsigned char aj;
+    unsigned char bj;
+    unsigned char Ctmp;
+
+    for(i=loopNum-1; i >=0; i--){
+        Ctmp = 0;
+        for(j=0; j<8; j++){
+            aj = (a[i] >> j) & 0x01;
+            bj = (b[i] >> j) & 0x01;
+            Ctmp ^= (aj ^ bj ^ borrow) << j;
+            borrow = (borrow & ~(aj ^ bj)) | (~(aj) & bj);
+        }
+        dst[i] = Ctmp;
+    }
+}
