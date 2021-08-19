@@ -5,8 +5,16 @@
 #include"add.h"
 
 /*
- 0001 1101 0101 1111 : a
- 0010 1011 1111 1010 : b
+input : n-bit A (a_n | ... | a_0), B (b_n | ... | b_0)
+output : 2n-bit C (c_n | c_{n-1} ... | c_1 | c_0)
+    1. for i = 0 to n-1 do
+    2.      for j = 0 to 8 do
+    3.          if b_j == 1 then
+    4.              C = (A << j) + C
+    5.          endif
+    6.      endfor
+    7. end for
+    8. return c_2n | c_{2n-1} ... | c_1 | c_0
 */
 void textBookMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum){
     int i, j;
