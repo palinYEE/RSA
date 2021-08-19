@@ -4,10 +4,10 @@
   - 가장 기초적인 RSA를 구현
 
 - Operation 구현
-  - Naive Addition : n-bit에 대한 덧셈 구현 완료
-  - Naive Substitution : n-bit에 대한 뺄셈 구현 완료
+  - Naive Addition : n-bit에 대한 덧셈 구현 완료.
+  - Naive Substitution : n-bit에 대한 뺄셈 구현 완료.
   - Multiplication
-    - Textbook Algorithm : n-bit에 대한 Textbook 곱셈 구현 완료. 알고리즘 주석 필요.
+    - Textbook Algorithm : n-bit에 대한 Textbook 곱셈 구현 완료. 
 
 # TODO LIST
 
