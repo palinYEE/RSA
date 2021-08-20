@@ -76,6 +76,7 @@ void OperationTest(){
     printf("1. Naive ADD\n");
     printf("2. Naive SUB\n");
     printf("3. Text Book Mul\n");
+    printf("5. Karatsuba Mul\n");
     printf("choice number : ");
     scanf("%d", &choice);
 
@@ -134,7 +135,24 @@ void OperationTest(){
         textBookMul(a, b, dst, arrayElementNum);
         printf("(text book) Array a * b : 0x");
         printArrayHexa(dst, 2*arrayElementNum);
-
+    case 5:
+        free(dst);
+        dst = calloc(2*arrayElementNum, sizeof(unsigned char));
+        if(BIT_SIZE <= 16){
+            inputArray(a,b);
+        }
+        else{
+            genRandomTestVector(a, arrayElementNum);
+            genRandomTestVector(b, arrayElementNum);
+        }
+        
+        printf("Array a : 0x");
+        printArrayHexa(a, arrayElementNum);
+        printf("Array b : 0x");
+        printArrayHexa(b, arrayElementNum);
+        karatsubaMul(a, b, dst, arrayElementNum);
+        printf("(karatsuba) Array a * b : 0x");
+        printArrayHexa(dst, 2*arrayElementNum);
 
     default:
         break;
