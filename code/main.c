@@ -150,7 +150,7 @@ void OperationTest(){
         printArrayHexa(a, arrayElementNum);
         printf("Array b : 0x");
         printArrayHexa(b, arrayElementNum);
-        karatsubaMul(a, b, dst, arrayElementNum);
+        karatsubaMul(a, b, dst, 2*arrayElementNum);
         printf("(karatsuba) Array a * b : 0x");
         printArrayHexa(dst, 2*arrayElementNum);
 

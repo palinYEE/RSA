@@ -24,6 +24,8 @@ void textBookMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loo
     unsigned char *arrayTmp;
     unsigned char *addTmp;
 
+    memset(dst, 0, 2*loopNum);
+
     arrayTmp = calloc(2*loopNum, sizeof(unsigned char));
     addTmp = calloc(2*loopNum + 1, sizeof(unsigned char));
 
@@ -87,13 +89,35 @@ void karatsubaMul(unsigned char *a, unsigned char *b, unsigned char *dst, int lo
     middle = calloc(loopNum + 2, sizeof(unsigned char));
 
     if(loopNum == 2){
-        textBookMul(a,b,dst, loopNum-1);
+        textBookMul(a,b,dst, loopNum-1);        
     }
     else{
         karatsubaMul(a + loopNum/4 , b + loopNum/4, a1b1, loopNum/2);
+        printf("a1b1 = ");
+        for(i=0; i<loopNum/2; i++){
+            printf("%02x ", a1b1[i]);
+        }
+        printf("\n");
         karatsubaMul(a , b, a0b0, loopNum/2);
-        naiveAdd(a, a+loopNum/2, a0a1, loopNum/2+1);
-        naiveAdd(b, b+loopNum/2, b0b1, loopNum/2+1);
+        printf("a0b0 = ");
+        for(i=0; i<loopNum/2; i++){
+            printf("%02x ", a0b0[i]);
+        }
+        printf("\n");
+
+        naiveAdd(a, a+loopNum/4, a0a1, loopNum/4+1);
+        printf("a0a1 = ");
+        for(i=0; i<loopNum/2+1; i++){
+            printf("%02x ", a0a1[i]);
+        }
+        printf("\n");
+        
+        naiveAdd(b, b+loopNum/4, b0b1, loopNum/4+1);
+        printf("b0b1 = ");
+        for(i=0; i<loopNum/2+1; i++){
+            printf("%02x ", b0b1[i]);
+        }
+        printf("\n");
         karatsubaMul(a0a1, b0b1, middle, loopNum + 2);
 
         memcpy(dst, a0b0, loopNum/2);
