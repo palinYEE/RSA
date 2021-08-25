@@ -71,6 +71,44 @@ void textBookMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loo
         (a'02^4 + a'1) x (b'02^4 + b'1)
         -> (a'0b'0)2^8 + {(a'0 + a'1)(b'0 + b'1) - a'0b'0 - a'1b'1}2^4 + (a'1b'1)
     위와 같은 과정을 재귀적으로 코딩을 하면 될 것 같다. 
+    주의. loopNum은 len(a*b) 이다. 
 */
 void karatsubaMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum){
+    int i, j, k;
+    
+    unsigned char *a0b0;
+    unsigned char *a1b1;
+    unsigned char *a0a1;
+    unsigned char *b0b1;
+
+    a0b0 = calloc(loopNum/2, sizeof(unsigned char));
+    a1b1 = calloc(loopNum/2, sizeof(unsigned char));
+    a0a1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
+    b0b1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
+
+    if (){
+        
+    }
+    else{
+        unsigned char *tmpA;
+        unsigned char *tmpB;
+
+        tmpA = calloc(loopNum/4, sizeof(unsigned char));
+        tmpB = calloc(loopNum/4, sizeof(unsigned char));
+
+        memcpy(tmpA, a + loopNum/4, loopNum/4);
+        memcpy(tmpB, b + loopNum/4, loopNum/4);
+
+        karatsubaMul(tmpA, tmpB, a0b0, loopNum/2);
+
+        memset(tmpA, 0, (loopNum/4)*sizeof(tmpA[0]));
+        memset(tmpB, 0, (loopNum/4)*sizeof(tmpB[0]));
+        memcpy(tmpA, a, loopNum/4);
+        memcpy(tmpB, b, loopNum/4);
+
+        karatsubaMul(tmpA, tmpB, a1b1, loopNum/2);
+
+        free(tmpA);
+        free(tmpB);
+    }
 }
