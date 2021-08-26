@@ -17,7 +17,7 @@
 - Multiplication
   - ~~Textbook Algorithm~~
   - Squaring
-  - Karatsuba Algorithm
+  - Karatsuba Algorithm    --> 잠시 보류 
   - Toom-Cook Algorithm
   - Schonhage-Strassen Algorithm
 
@@ -28,7 +28,6 @@
 - Modular Exponentiation
   - Left-to-Right Algorithm
   - Right-to-Left Algorithm
-
 
 - Fast Reduction
   - Darret Reduction Algorithm

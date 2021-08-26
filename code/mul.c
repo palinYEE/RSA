@@ -73,42 +73,65 @@ void textBookMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loo
     위와 같은 과정을 재귀적으로 코딩을 하면 될 것 같다. 
     주의. loopNum은 len(a*b) 이다. 
 */
-void karatsubaMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum){
-    int i, j, k;
+// void karatsubaMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum){
+//     int i, j, k;
     
-    unsigned char *a0b0;
-    unsigned char *a1b1;
-    unsigned char *a0a1;
-    unsigned char *b0b1;
+//     unsigned char *a0b0;
+//     unsigned char *a1b1;
+//     unsigned char *a0a1;
+//     unsigned char *b0b1;
 
-    a0b0 = calloc(loopNum/2, sizeof(unsigned char));
-    a1b1 = calloc(loopNum/2, sizeof(unsigned char));
-    a0a1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
-    b0b1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
+//     a0b0 = calloc(loopNum/2, sizeof(unsigned char));
+//     a1b1 = calloc(loopNum/2, sizeof(unsigned char));
+//     a0a1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
+//     b0b1 = calloc(loopNum/4 + 1, sizeof(unsigned char));
 
-    if (){
+//     if (){
         
-    }
-    else{
-        unsigned char *tmpA;
-        unsigned char *tmpB;
+//     }
+//     else{
+//         unsigned char *tmpA;
+//         unsigned char *tmpB;
 
-        tmpA = calloc(loopNum/4, sizeof(unsigned char));
-        tmpB = calloc(loopNum/4, sizeof(unsigned char));
+//         tmpA = calloc(loopNum/4, sizeof(unsigned char));
+//         tmpB = calloc(loopNum/4, sizeof(unsigned char));
 
-        memcpy(tmpA, a + loopNum/4, loopNum/4);
-        memcpy(tmpB, b + loopNum/4, loopNum/4);
+//         memcpy(tmpA, a, loopNum/4);
+//         memcpy(tmpB, b, loopNum/4);
 
-        karatsubaMul(tmpA, tmpB, a0b0, loopNum/2);
+//         karatsubaMul(tmpA, tmpB, a1b1, loopNum/2);
 
-        memset(tmpA, 0, (loopNum/4)*sizeof(tmpA[0]));
-        memset(tmpB, 0, (loopNum/4)*sizeof(tmpB[0]));
-        memcpy(tmpA, a, loopNum/4);
-        memcpy(tmpB, b, loopNum/4);
+//         memcpy(tmpA, a + loopNum/4, loopNum/4);
+//         memcpy(tmpB, b + loopNum/4, loopNum/4);
 
-        karatsubaMul(tmpA, tmpB, a1b1, loopNum/2);
+//         karatsubaMul(tmpA, tmpB, a0b0, loopNum/2);
 
-        free(tmpA);
-        free(tmpB);
-    }
+//         naiveAdd(tmpA, a, a0a1, loopNum/4 + 1);
+//         naiveAdd(tmpB, b, b0b1, loopNum/4 + 1);
+
+//         memset(tmpA, 0, (loopNum/4)*sizeof(tmpA[0]));
+//         memset(tmpB, 0, (loopNum/4)*sizeof(tmpB[0]));
+
+//         memcpy(dst, a0b0, loopNum/2);
+//         memcpy(dst + loopNum/2, )
+
+//         free(tmpA);
+//         free(tmpB);
+//     }
+// }
+
+/*
+input : x and n
+output : x^n
+    1. t <-1 
+    2. for i <- l-1 down to 0 do
+    3.      t <- t^2
+    4.      t <- tx^{n_i}
+    5. endfor
+    6. return t
+where l = len(n)
+*/
+void left2right(unsigned char *a, int num){
+    int t = 1;
+    
 }

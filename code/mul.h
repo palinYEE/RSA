@@ -6,4 +6,6 @@ void textBookMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loo
 void Squaring(unsigned char *a, int loopNum);
 
 void karatsubaMul(unsigned char *a, unsigned char *b, unsigned char *dst, int loopNum);
+
+void left2right(unsigned char *a, int num);
 #endif
