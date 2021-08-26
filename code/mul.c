@@ -5,6 +5,7 @@
 #include"mul.h"
 #include"add.h"
 
+#include"utils.h"
 /*
 input : n-bit A (a_n | ... | a_0), B (b_n | ... | b_0)
 output : 2n-bit C (c_n | c_{n-1} ... | c_1 | c_0)
